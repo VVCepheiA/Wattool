@@ -39,7 +39,7 @@ exports.index = function (req, res){
     if (err) return res.render('500');
     Article.count().exec(function (err, count) {
       res.render('articles/index', {
-        title: 'Articles',
+        title: 'Wattools',
         articles: articles,
         page: page + 1,
         pages: Math.ceil(count / perPage)
@@ -54,7 +54,7 @@ exports.index = function (req, res){
 
 exports.new = function (req, res){
   res.render('articles/new', {
-    title: 'New Article',
+    title: 'New Tool',
     article: new Article({})
   });
 };
@@ -116,7 +116,7 @@ exports.update = function (req, res){
     }
 
     res.render('articles/edit', {
-      title: 'Edit Article',
+      title: 'Edit Tool',
       article: article,
       errors: utils.errors(err.errors || err)
     });
